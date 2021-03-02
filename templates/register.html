@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ super() }}
+    Registro
+{% endblock %}
+
+
+{% block head_links %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static', filename='css/register.css')}}">
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="container">
+        <header class="header">
+    
+            <figure class="header__figure">
+                <img src="{{url_for('static', filename='img/logo.png')}}" alt="hiid Logo">
+            </figure>
+    
+        </header>
+    
+        <main class="main">
+    
+            <form class="main__form">
+
+                <label class="main__form-label" for="name">Nombre</label>
+                <input class="main__form-input" type="text" name="name" id="name">
+    
+                <label class="main__form-label" for="email">Correo</label>
+                <input class="main__form-input" type="text" name="email" id="email">
+    
+                <label class="main__form-label" for="password">Contraseña</label>
+                <div class="main__form-password-group">
+                    <input class="form-password-group__input" type="password" name="password" id="password">
+                    <a class="form-password-group__show-password">
+                        {% include 'svg/eye.svg' %}
+                    </a>
+                </div>
+    
+                <label class="main__form-label" for="repassword">Verificar contraseña</label>
+                <div class="main__form-password-group">
+                    <input class="form-password-group__input" type="password" name="repassword" id="repassword">
+                    <a class="form-password-group__show-password">
+                        {% include 'svg/eye.svg' %}
+                    </a>
+                </div>
+    
+                <p>
+                    Al registrarte aceptas los <a href="#">términos y condiciones</a> y <a href="#">políticas de privacidad</a> de nuestra web.
+                </p>
+    
+                <input class="main__form-submit" type="submit" value="Registrarme">
+    
+                <p class="main__form-redirect-login">
+                    ¿Ya eres miembro? <a href="{{url_for('login')}}">Inicia sesión</a>
+                </p>
+    
+            </form>
+    
+        </main>
+    </div>
+
+{% endblock %}

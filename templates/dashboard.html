@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ super() }}
+    Dashboard
+{% endblock %}
+
+
+{% block head_links %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static', filename='css/dashboard.css')}}">
+{% endblock %}
+
+
+{% block content %}
+
+    <aside class="sidebar" id="sidebar">
+
+        <figure class="sidebar__logo">
+
+        </figure>
+
+        <nav class="sidebar__nav">
+            <ul>
+                <li class="sidebar__nav-item">
+                    <a href="#">
+                        {% include 'svg/house-fill.svg' %}
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="sidebar__nav-item">
+                    <a href="#">
+                        {% include 'svg/person-fill.svg' %}
+                        <span>Perfil</span>
+                    </a>
+                </li>
+                <li class="sidebar__nav-item">
+                    <a href="#">
+                        {% include 'svg/laptop-fill.svg' %}
+                        <span>Mis negocios</span>
+                    </a>
+                </li>
+                <li class="sidebar__nav-item">
+                    <a href="#">
+                        {% include 'svg/person-badge-fill.svg' %}
+                        <span>Mis tarjetas</span>
+                    </a>
+                </li>
+                <li class="sidebar__nav-item">
+                    <a href="#">
+                        {% include 'svg/graph-up.svg' %}
+                        <span>Analytics</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div>
+
+        </div>
+
+    </aside>
+
+
+    <div class="hide__sidebar" id="hide-sidebar">
+        <div class="hide__sidebar-text">
+            <span>Panel</span>
+        </div>
+        <div>
+            {% include 'svg/caret-left.svg' %}
+        </div>
+    </div>
+
+
+
+    <main class="main" id="main">
+
+    </main>
+
+{% endblock %}
+
+
+{% block scripts %}
+    {{ super() }}
+    <script src="{{url_for('static', filename='scripts/dashboard.js')}}"></script>
+{% endblock %}

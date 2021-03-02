@@ -1,0 +1,17 @@
+:root {
+    --primary-color: #86db93;
+    --primary-font: #464646;
+    --nav-font: white;
+    --nav-background: #343533;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Montserrat', sans-serif;
+}
